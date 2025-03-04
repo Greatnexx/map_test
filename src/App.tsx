@@ -7,7 +7,7 @@ const App = () => {
     { id: "funakaye", name: "Funakaye" },
     { id: "kwami", name: "Kwami" },
     { id: "gombe", name: "Gombe" },
-    { id: "yamaltu", name: "Yamaltu/Deba" },
+    { id: "yamaltu", name: "Yamaltu" },
     { id: "akko", name: "Akko" },
     { id: "billiri", name: "Billiri" },
     { id: "balanga", name: "Balanga" },
@@ -16,35 +16,44 @@ const App = () => {
   ];
 
         return (
-         <div className="bg-[#1C2234] w-full  px-[149px] py-[102px]   ">
+         <div className="bg-[#1C2234] w-full  md:px-[149px] px-[19px] md:py-[102px] py-[50px]   ">
                 
                 {/* state name section */}
             
-               <div className="h-[911px]">
-              <div className="bg-[#EEEFF2] p-[32px] rounded-t-[20px]   ">
+               <div className="md:h-[911px] h-full">
+              <div className="bg-[#EEEFF2] p-[32px] rounded-t-[10px] md:rounded-t-[20px]   ">
 
-                <h1 className="text-[28px] font-bold">Gombe State Interactive Project Map</h1>
+                <h1 className="md:text-[28px] text-[22px] font-bold">Gombe State Interactive Project Map</h1>
               </div>
                   
-              <div className="flex bg-white px-[117px] pb-[43px] gap-[49px] rounded-b-[20px] ">
+              <div className="flex   flex-col md:flex-row bg-white md:px-[117px] pb-[43px] md:gap-[49px] rounded-b-[20px] ">
 
-                <div className="mt-[47px] space-y-[17px]">
-
-                      {regions.map((region:any) => (
-                     <button
-                    key={region.id}
-                 className={`border border-[#CBD5E0] py-[12px] px-[14px] rounded-[9px] w-[303px] gap-[12px] text-center ${
-               hoveredRegion === region.id ? "bg-blue-500 text-white" : "bg-white hover:bg-gray-600 hover:text-white"
-              }`}>
+              <div className="mt-[47px] px-2 md:px-8 md:space-y-[17px] flex flex-wrap items-center justify-center md:block">
+  <div className="grid md:grid-cols-1 grid-cols-4 gap-2 md:flex md:flex-col md:space-y-[17px]">
+    {regions.map((region: any) => (
+      <button
+        key={region.id}
+        className={`border border-[#CBD5E0] md:text-[16px] text-[10px] md:py-[12px] py-[8px] md:px-[14px] px-[8px] rounded-[9px] w-full  md:w-[303px] text-center ${
+          hoveredRegion === region.id
+            ? "bg-blue-500 text-white"
+            : "bg-white hover:bg-gray-600 hover:text-white"
+        }`}
+      >
         {region.name}
-          </button>
-           ))}
-      </div>
+      </button>
+    ))}
+  </div>
+</div>
+
+
 
 
       {/* svg content */}
-            <div className="py-[18px] ">
-<svg width="505" height="730" viewBox="0 0 505 730" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <div className="md:py-[18px] mt-[61px] md:mt-0 ">
+     <svg className="w-[340px] md:w-[400px] lg:w-[505px] h-auto"
+          viewBox="0 0 505 730"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg">
 <g>
 <path id="dukku"
 onMouseEnter={() => setHoveredRegion("dukku")}
